@@ -3,9 +3,14 @@
 <head>
   <base target="_top">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+   <!-- 🖼️ [แก้ได้] เปลี่ยน favicon / app icon โดยแก้ URL ในทั้ง 3 บรรทัดนี้ -->
+  <link rel="apple-touch-icon" href="https://i.ibb.co/1jySC5R/Untitled-1.png">
+  <link rel="icon" sizes="192x192" href="https://i.ibb.co/1jySC5R/Untitled-1.png">
+  <link rel="shortcut icon" href="https://i.ibb.co/1jySC5R/Untitled-1.png">
   
-  <meta name="apple-mobile-web-app-title" content="SKYBLUE Q">
-  <meta name="application-name" content="SKYBLUE Q">
+  <meta name="apple-mobile-web-app-title" content="BABYBLUE Q">
+  <meta name="application-name" content="BABYBLUE Q">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   
@@ -63,7 +68,7 @@
       if (!url) return '';
       const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/) || url.match(/\/d\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
-        return `https://drive.google.com/uc?export=view&id=${match[1]}`; 
+        return `https://lh3.googleusercontent.com/d/${match[1]}`; 
       }
       return url; 
     };
@@ -760,7 +765,7 @@
                     setShowImageModal(false); 
                     setTempImageUrl(''); 
                   }} className="bg-white/95 backdrop-blur-xl w-full max-w-xs rounded-[35px] p-6 shadow-2xl border border-white animate-slideUp">
-                   <h3 className="text-sm font-black mb-4 text-center text-gray-800">เปลี่ยนรูปโปรไฟล์ 🐰</h3>
+                   <h3 className="text-sm font-black mb-4 text-center text-gray-800">เปลี่ยนรูปโปรไฟล์</h3>
                    <div className="space-y-2">
                      <input type="url" required value={tempImageUrl} onChange={(e) => setTempImageUrl(e.target.value)} className="w-full p-3.5 rounded-2xl bg-white border border-gray-100 outline-none text-[11px] shadow-sm focus:border-[#BCE2F4] transition-all text-center" placeholder="วางลิงก์รูปภาพ Google Drive ที่นี่..." />
                      <button type="submit" className="w-full py-3.5 rounded-2xl font-black text-xs mt-3 text-white shadow-lg active:scale-95 transition-all" style={{ backgroundColor: COLORS.pinkDeep }}>Save Image</button>
@@ -847,4 +852,5 @@
 </body>
 
 </html>
+
 
